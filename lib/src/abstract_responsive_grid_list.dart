@@ -54,6 +54,12 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   final double? verticalGridMargin;
 
   ///
+  /// The vertical padding of the grid.
+  ///
+  /// By default, ListView will automatically pad the list's scrollable extremities to avoid partial obstructions indicated by MediaQuery's padding. To avoid this behavior, override with a zero padding property.
+  final EdgeInsetsGeometry? listPadding;
+
+  ///
   /// [MainAxisAlignment] of each row in the grid list.
   ///
   final MainAxisAlignment rowMainAxisAlignment;
@@ -65,6 +71,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     required this.verticalGridSpacing,
     this.horizontalGridMargin,
     this.verticalGridMargin,
+    this.listPadding,
     required this.rowMainAxisAlignment,
     required this.children,
     Key? key,

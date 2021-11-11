@@ -17,6 +17,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
     double verticalGridSpacing = 16,
     double? horizontalGridMargin,
     double? verticalGridMargin,
+    EdgeInsetsGeometry? listPadding,
     MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
     this.shrinkWrap = false,
     required List<Widget> children,
@@ -27,6 +28,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
           verticalGridSpacing: verticalGridSpacing,
           horizontalGridMargin: horizontalGridMargin,
           verticalGridMargin: verticalGridMargin,
+          listPadding: listPadding,
           rowMainAxisAlignment: rowMainAxisAlignment,
           children: children,
         );
@@ -39,6 +41,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
         final items = getResponsiveGridListItems(constraints.maxWidth);
 
         return ListView.builder(
+          padding: listPadding ?? EdgeInsets.zero,
           itemCount: items.length,
           shrinkWrap: shrinkWrap,
           itemBuilder: (BuildContext context, int index) {
